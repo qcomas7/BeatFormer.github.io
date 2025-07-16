@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="BeatFormer: Efficient motion-robust remote heart rateestimation through unsupervisedspectral zoomed attention filters.">
+  <meta name="keywords" content="rPPG, Remote Photoplethysmography, motion distortion, self-supervised">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BeatFormer: Efficient motion-robust remote heart rateestimation through unsupervisedspectral zoomed attention filters
+  </title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <!-- <link rel="icon" href="./static/images/favicon.svg"> -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">BeatFormer: Efficient motion-robust remote heart rateestimation through unsupervisedspectral zoomed attention filters</h1>
+			<h2 class="is-size-4 conference-title">CVPM ICCV 2025</h2>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+             <span class="author-block">
+                Joaquim Comas,
+              </span>
+              <span class="author-block">
+                Federico Sukno,
+              </span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">Department of Information and Communication Technologies Pompeu Fabra University, Barcelona, Spain,</span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- Arxiv PDF link -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2407.21519" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+            <!-- ArXiv abstract Link -->
+            <span class="link-block">
+              <a href="https://arxiv.org/abs/2407.21519" target="_blank"
+                class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                  <i class="ai ai-arxiv"></i>
+                </span>
+                <span>arXiv</span>
+              </a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Remote photoplethysmography (rPPG) captures cardiac signals from facial videos and is gaining attention for its diverse applications. While deep learning has advanced rPPG estimation, it relies on large, diverse datasets for effective generalization. In contrast, handcrafted methods utilize physiological priors for better generalization in unseen scenarios like motion while maintaining computational efficiency. However, their linear assumptions limit performance in complex conditions, where deep learning provides superior pulsatile information extraction. This highlights the need for hybrid approaches that combine the strengths of both methods. To address this, we present BeatFormer, a lightweight spectral attention model for rPPG estimation, which integrates zoomed orthonormal complex attention and frequency-domain energy measurement, enabling a highly efficient model. Additionally, we introduce Spectral Contrastive Learning (SCL), which allows BeatFormer to be trained without any PPG or HR labels. We validate BeatFormer on the PURE, UBFC-rPPG, and MMPD datasets, demonstrating its robustness and performance, particularly in cross-dataset evaluations under motion scenarios.
+		  </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Framework</h2>
+        <div class="content has-text-justified">
+          <p>
+            <center><img src="./static/images/BeatFormer1.png"
+              width="900"
+              height="700" /></center>
+          </p>
+		  <div class="content has-text-justified">
+          <p>
+            First, RGB traces are segmented with overlap and transformed into the frequency domain using the Chirp-Z Transform (CZT). The zoomed spectrum is then processed by BeatFormer to filter pulsatile information from distortions, incorporating orthonormal regularization and energy-based weighting. The filtered frequency features are converted back to the temporal domain using the Inverse Chirp-Z Transform (ICZT), followed by an overlap-add operation to reconstruct the rPPG signal. To train BeatFormer, spectral contrastive learning (SCL) is applied, leveraging frequency-domain meaningful transformations to enforce explicit priors during training, enabling label-free training.
+		  </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+
+  <section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Spectral contrastive learning</h2>
+        <div class="content has-text-justified">
+          <p>
+            <center><img src="./static/images/transformations.png"
+              width="500"
+              height="500" /></center>
+            Spectral contrastive learning (SCL) leverages meaningful frequency-domain video transformations, based on next assumptions: 1) Pulse content remains consistent under different color representations. 2) rPPG signals are weaker and quasi-periodic, while motion signals are stronger and more chaotic. 3) Cardiac signals can be recovered during motion if sufficient skin is visible.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Quantitative Results</h2>
+        <div class="content has-text-justified">
+          <p>
+			Across all MMPD motion splits, both versions of BeatFormer (supervised and spectral contrastive learning) achieve significantly lower errors, highlighting stronger motion robustness than current state-of-the-art, particularly DL approaches.
+            <center><img src="./static/images/motion_comparison.png"
+              width="1200"
+              height="800" /></center>
+			  Mean absolute error comparison on MMPD motion scenarios (beats per minute).
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Qualitative Results</h2>
+        <div class="content has-text-justified">
+          <p>
+            <video id="teaser" preload='auto' autoplay muted loop playsinline height="100%">
+        <source src="./static/images/qualitative.gif"
+                type="video/gif">
+        </video>
+        <h2 class="subtitle has-text-centered">
+        Inference examples for cross-dataset MMPD subjects trained on PURE dataset. BeatFormer-SL (yellow), BeatFormer-SCL (magenta), and the PPG ground truth (black).
+        </h2>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--BibTex citation -->
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{comas2025beatformer,
+  title={BeatFormer: Efficient motion-robust remote heart rateestimation through unsupervisedspectral zoomed attention filters},
+  author={Comas, Joaquim and Sukno, Federico},
+  journal={ICCVW},
+  year={2025}
+}</code></pre>
+  </div>
+</section>
+
+
+
