@@ -68,7 +68,16 @@
                 <span class="icon">
                   <i class="ai ai-arxiv"></i>
                 </span>
-                <span>arXiv</span>
+                <span>ArXiv</span>
+              </a>
+            </span>
+            <span class="link-block">
+              <a href="https://github.com/qcomas7/BeatFormer" target="_blank"
+                class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                  <i class="ai ai-arxiv"></i>
+                </span>
+                <span>Code</span>
               </a>
             </span>
           </div>
@@ -127,31 +136,38 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Spectral contrastive learning</h2>
         <div class="content has-text-justified">
+          <div style="text-align: center;">
+            <img src="./static/images/transformations.png" width="500" height="500" />
+          </div>
           <p>
-            <center><img src="./static/images/transformations.png"
-              width="500"
-              height="500" /></center>
-            Spectral contrastive learning (SCL) leverages meaningful frequency-domain video transformations, based on next assumptions: 1) Pulse content remains consistent under different color representations. 2) rPPG signals are weaker and quasi-periodic, while motion signals are stronger and more chaotic. 3) Cardiac signals can be recovered during motion if sufficient skin is visible.
+            Spectral contrastive learning (SCL) leverages meaningful frequency-domain video transformations, based on the following assumptions:
           </p>
+          <ol>
+            <li>Pulse content remains consistent under different color representations.</li>
+            <li>rPPG signals are weaker and quasi-periodic, while motion signals are stronger and more chaotic.</li>
+            <li>Cardiac signals can be recovered during motion if sufficient skin is visible.</li>
+          </ol>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-  <section class="section">
+ <section class="section">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Quantitative Results</h2>
         <div class="content has-text-justified">
           <p>
-			Across all MMPD motion splits, both versions of BeatFormer (supervised and spectral contrastive learning) achieve significantly lower errors, highlighting stronger motion robustness than current state-of-the-art, particularly DL approaches.
-            <center><img src="./static/images/motion_comparison.png"
-              width="1200"
-              height="800" /></center>
-			  Mean absolute error comparison on MMPD motion scenarios (beats per minute).
+            Across all MMPD motion splits, both versions of BeatFormer (supervised and spectral contrastive learning) achieve significantly lower errors, highlighting stronger motion robustness than current state-of-the-art, particularly DL approaches.
           </p>
+          <div style="text-align: center;">
+            <img src="./static/images/motion_comparison.png" width="1200" height="800" />
+            <p style="text-align: center; margin-top: 0.5em;">
+              Mean absolute error comparison on MMPD motion scenarios (beats per minute).
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -164,14 +180,11 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Qualitative Results</h2>
         <div class="content has-text-justified">
-          <p>
-            <video id="teaser" preload='auto' autoplay muted loop playsinline height="100%">
-        <source src="./static/images/qualitative.gif"
-                type="video/gif">
-        </video>
-        <h2 class="subtitle has-text-centered">
-        Inference examples for cross-dataset MMPD subjects trained on PURE dataset. BeatFormer-SL (yellow), BeatFormer-SCL (magenta), and the PPG ground truth (black).
-        </h2>
+          <div style="text-align: center;">
+            <img src="./static/images/qualitative.gif" alt="Qualitative results" style="max-width: 100%; height: auto;" />
+          </div>
+          <p style="font-size: 1rem;">
+            Inference examples for cross-dataset MMPD subjects trained on PURE dataset. BeatFormer-SL (yellow), BeatFormer-SCL (magenta), and the PPG ground truth (black).
           </p>
         </div>
       </div>
